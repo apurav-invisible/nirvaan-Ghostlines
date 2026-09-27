@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Journal — GHOSTLINE</title>
+  <meta name="description" content="The GHOSTLINE Journal. Ghost signs, painted-over cities, urban typography, streetwear culture and the visual references behind the brand." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Shop</p>
+        <ul>
+          <li><a href="men.html" class="mobile-nav-link">Men</a></li>
+          <li><a href="women.html" class="mobile-nav-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Collections</p>
+        <ul>
+          <li><a href="men.html?filter=t-shirts" class="mobile-nav-link">T-Shirts</a></li>
+          <li><a href="men.html?filter=hoodies" class="mobile-nav-link">Hoodies</a></li>
+          <li><a href="men.html?filter=pants" class="mobile-nav-link">Pants</a></li>
+          <li><a href="accessories.html" class="mobile-nav-link">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Journal / Info</p>
+        <ul>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="terms.html" class="mobile-nav-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="mobile-nav-link">Privacy Policy</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="mobile-nav-meta">
+      <a href="https://www.instagram.com/ghostlines/">Instagram</a>
+      <a href="https://x.com/ghostlines/">X</a>
+    </div>
+  </nav>
+
+  <header id="navbar" class="navbar navbar-static scrolled" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="GHOSTLINE home">GHOSTLINE</a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Collections</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html?filter=t-shirts">T-Shirts</a></li>
+            <li><a href="men.html?filter=hoodies">Hoodies</a></li>
+            <li><a href="men.html?filter=pants">Pants</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Journal / Info</button>
+          <ul class="nav-dropdown">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="nav-icon" id="search-btn" aria-label="Search" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+      </button>
+      <button class="nav-icon" id="bag-btn" aria-label="Shopping bag" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 01-8 0"></path>
+        </svg>
+        <span class="bag-count" id="bag-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       JOURNAL HEADER
+       Not "our blog" — this is an editorial archive.
+       ========================================== -->
+  <header class="journal-header">
+    <p class="journal-eyebrow">GHOSTLINE / JOURNAL</p>
+    <h1 class="journal-title">The Wall<br>Remembers.</h1>
+    <p class="journal-intro">
+      A record of ghost signs, painted-over storefronts, street typography
+      and urban surfaces. The visual references, places and culture
+      that GHOSTLINE is built from. Nothing fades completely.
+    </p>
+  </header>
+
+
+  <!-- ==========================================
+       FEATURED STORY
+       Visually dominant. Full-width split grid.
+       ========================================== -->
+  <article class="featured-story" aria-label="Featured story">
+
+    <div class="featured-story-image">
+      <!-- Replace with actual editorial image -->
+      <img
+        src="assets/images/editorial/blog-featured.jpg"
+        alt="Ghost sign on a brick wall — faded paint, urban decay"
+      />
+    </div>
+
+    <div class="featured-story-content">
+      <p class="article-category">Urban Memory</p>
+      <p class="article-date">September 2026</p>
+      <h2 class="featured-story-title">The City Paints Over Everything</h2>
+      <p class="featured-story-excerpt">
+        Every wall in every city is a document. Paint layers accumulate
+        over decades — brand names, phone numbers, business hours, political
+        slogans. When the new layer goes on, the old one doesn't vanish.
+        It retreats. It bleeds through. It becomes a ghost.
+      </p>
+      <a href="#" class="read-link">Read Story</a>
+    </div>
+
+  </article>
+
+
+  <!-- ==========================================
+       ARTICLE GRID — Archive
+       Mix of article sizes: standard + wide.
+       Borders used as dividers, not cards.
+       ========================================== -->
+  <section class="article-section" aria-labelledby="archive-label">
+
+    <p class="article-section-label" id="archive-label">Archive · All Stories</p>
+
+    <div class="article-grid">
+
+      <!-- Article 1 — standard -->
+      <a href="#" class="article-block" aria-label="Read: Why Ghost Signs Never Really Disappear">
+        <div class="article-image-wrap">
+          <img src="assets/images/editorial/blog-ghost-signs.jpg" alt="Faded signage on a concrete wall" loading="lazy" />
+        </div>
+        <div class="article-meta">
+          <div class="article-meta-top">
+            <p class="article-category">History</p>
+            <h3 class="article-title">Why Ghost Signs Never Really Disappear</h3>
+            <p class="article-excerpt">
+              Ghost signs are accidental archives. They weren't preserved intentionally —
+              they survived because no one bothered to remove them. That indifference
+              made them permanent.
+            </p>
+          </div>
+          <div>
+            <p class="article-date">August 2026</p>
+            <span class="read-link" style="display: inline-block; margin-top: 12px;">Read Article</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 2 — standard -->
+      <a href="#" class="article-block" aria-label="Read: Layer Three — The Story Behind Drop 001">
+        <div class="article-image-wrap">
+          <img src="assets/images/editorial/blog-layered-paint.jpg" alt="Close-up of layered paint on urban surface" loading="lazy" />
+        </div>
+        <div class="article-meta">
+          <div class="article-meta-top">
+            <p class="article-category">Drop Archive</p>
+            <h3 class="article-title">Layer Three: The Story Behind Drop 001</h3>
+            <p class="article-excerpt">
+              The name came before the product. Layer Three refers to a specific
+              moment in the life of a wall — the third coat of paint, the one that
+              always starts to blister.
+            </p>
+          </div>
+          <div>
+            <p class="article-date">August 2026</p>
+            <span class="read-link" style="display: inline-block; margin-top: 12px;">Read Article</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 3 — WIDE, spans both columns — visual break -->
+      <a href="#" class="article-block wide" aria-label="Read: Concrete, Ink & Weather">
+        <div class="article-image-wrap">
+          <img src="assets/images/editorial/blog-concrete-ink.jpg" alt="Urban concrete wall with lettering" loading="lazy" />
+        </div>
+        <div class="article-meta">
+          <div class="article-meta-top">
+            <p class="article-category">Material</p>
+            <h3 class="article-title">Concrete, Ink &amp; Weather</h3>
+            <p class="article-excerpt">
+              Three things decide what survives on a wall: the quality of the paint,
+              the shelter from rain, and whether anyone cares to repaint. Most of the
+              time, nobody cares. That's the archive we're working from.<br><br>
+              The garments in GHOSTLINE are treated to carry the same logic.
+              Dyed to fade. Printed to weather. Built to be inherited.
+            </p>
+          </div>
+          <div>
+            <p class="article-date">July 2026</p>
+            <span class="read-link" style="display: inline-block; margin-top: 16px;">Read Article</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 4 — standard -->
+      <a href="#" class="article-block" aria-label="Read: The Typography of the Street">
+        <div class="article-image-wrap">
+          <img src="assets/images/editorial/blog-street-typography.jpg" alt="Street signage typography, faded letters" loading="lazy" />
+        </div>
+        <div class="article-meta">
+          <div class="article-meta-top">
+            <p class="article-category">Typography</p>
+            <h3 class="article-title">The Typography of the Street</h3>
+            <p class="article-excerpt">
+              Before digital fonts, every business had a sign painter.
+              The letterforms on old walls have a directness that
+              no typeface library has fully recovered.
+            </p>
+          </div>
+          <div>
+            <p class="article-date">July 2026</p>
+            <span class="read-link" style="display: inline-block; margin-top: 12px;">Read Article</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 5 — standard -->
+      <a href="#" class="article-block" aria-label="Read: From Wall to Garment">
+        <div class="article-image-wrap">
+          <img src="assets/images/editorial/blog-wall-to-garment.jpg" alt="Editorial fashion on urban background" loading="lazy" />
+        </div>
+        <div class="article-meta">
+          <div class="article-meta-top">
+            <p class="article-category">Process</p>
+            <h3 class="article-title">From Wall to Garment</h3>
+            <p class="article-excerpt">
+              The translation from a photographed surface to a printed garment
+              requires decisions. What gets lost. What gets kept.
+              What gets amplified.
+            </p>
+          </div>
+          <div>
+            <p class="article-date">June 2026</p>
+            <span class="read-link" style="display: inline-block; margin-top: 12px;">Read Article</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Article 6 — standard -->
+      <a href="#" class="article-block" aria-label="Read: Abandoned Storefronts Are Living Museums">
+        <div class="article-image-wrap">
+          <img src="assets/images/editorial/blog-storefronts.jpg" alt="Weathered shopfront, ghost sign visible" loading="lazy" />
+        </div>
+        <div class="article-meta">
+          <div class="article-meta-top">
+            <p class="article-category">Places</p>
+            <h3 class="article-title">Abandoned Storefronts Are Living Museums</h3>
+            <p class="article-excerpt">
+              Nobody curated them. Nobody insured them. They just kept
+              existing. The storefronts of north Mumbai, central Delhi,
+              old Bengaluru — all of them are open indefinitely.
+            </p>
+          </div>
+          <div>
+            <p class="article-date">June 2026</p>
+            <span class="read-link" style="display: inline-block; margin-top: 12px;">Read Article</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">GHOSTLINE</span>
+        <p class="footer-statement">
+          Prints what the city painted over.<br>
+          History doesn't vanish — it fades into the next layer.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Shop</p>
+        <ul class="footer-links">
+          <li><a href="men.html" class="footer-link">Men</a></li>
+          <li><a href="women.html" class="footer-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+          <li><a href="#" class="footer-link">Sale</a></li>
+          <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Information</p>
+        <ul class="footer-links" style="margin-bottom: 32px;">
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+        <p class="footer-col-label">Social</p>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/ghostlines/" class="footer-link">Instagram</a></li>
+          <li><a href="https://x.com/ghostlines/" class="footer-link">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">EST. LAYER 3 &nbsp;·&nbsp; PRINTED, NOT PAINTED &nbsp;·&nbsp; © GHOSTLINE</p>
+      <p class="footer-tagline">NOTHING FADES CLEAN.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

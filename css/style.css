@@ -1,0 +1,2409 @@
+/* ============================================
+   GHOSTLINE — Custom CSS
+   Only what Tailwind CDN cannot handle cleanly
+   ============================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap');
+
+/* --- Root Variables --- */
+:root {
+  --bg:       #F7F6F2;
+  --white:    #FFFFFF;
+  --black:    #111111;
+  --secondary:#6B6862;
+  --accent:   #C1432E;
+  --border:   #D9D7D2;
+}
+
+/* --- Base Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid transparent;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+/* Navbar turns opaque when scrolled */
+.navbar.scrolled {
+  background-color: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+/* On hero, text is white */
+.navbar.on-hero .nav-logo,
+.navbar.on-hero .nav-link,
+.navbar.on-hero .nav-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.on-hero .hamburger span {
+  background-color: var(--white);
+}
+
+/* When scrolled on hero, switch to dark */
+.navbar.scrolled .nav-logo,
+.navbar.scrolled .nav-link,
+.navbar.scrolled .nav-icon {
+  color: var(--black);
+}
+
+.navbar.scrolled .hamburger span {
+  background-color: var(--black);
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  color: var(--black);
+  transition: color 200ms ease;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  transition: opacity 150ms ease, color 200ms ease;
+}
+
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-dropdown-trigger::after {
+  content: '▾';
+  font-size: 9px;
+  letter-spacing: 0;
+  opacity: 0.7;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 196px;
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 110;
+}
+
+.nav-item.open .nav-dropdown,
+.nav-item:hover .nav-dropdown,
+.nav-item:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 8px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.navbar.on-hero .nav-dropdown-trigger {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar.scrolled .nav-dropdown-trigger,
+.navbar-static .nav-dropdown-trigger {
+  color: var(--black);
+}
+
+.nav-link:hover {
+  opacity: 0.55;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: opacity 150ms ease, color 200ms ease;
+  padding: 0;
+}
+
+.nav-icon:hover {
+  opacity: 0.55;
+}
+
+/* Bag count badge */
+.bag-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 600;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.bag-count.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Hamburger — mobile only */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background-color: var(--black);
+  transition: transform 250ms ease, opacity 200ms ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ============================================
+   MOBILE NAV OVERLAY
+   ============================================ */
+
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 32px 48px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.mobile-nav.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-nav-group {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0 8px;
+}
+
+.mobile-nav-group > ul {
+  list-style: none;
+}
+
+.mobile-nav-group-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+
+.mobile-nav-group .mobile-nav-link {
+  font-size: 28px;
+  border-bottom: none;
+  padding: 2px 0;
+}
+
+.mobile-nav-links > li > .mobile-nav-link {
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-nav-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--black);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+  display: block;
+  transition: color 150ms ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--accent);
+}
+
+.mobile-nav-meta {
+  margin-top: 40px;
+  display: flex;
+  gap: 24px;
+}
+
+.mobile-nav-meta a {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+/* ============================================
+   HERO SLIDER
+   ============================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: #1a1a18;
+}
+
+/* Each slide positioned absolutely, hidden by default */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 700ms ease-in-out;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Background image with subtle Ken Burns effect */
+.slide-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 6000ms ease-out;
+}
+
+.slide.active .slide-image {
+  transform: scale(1.04);
+}
+
+/* Gradient overlay — heavier on left for text readability */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.58) 0%,
+    rgba(0, 0, 0, 0.22) 55%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+}
+
+/* Text content — lower left, not centered */
+.slide-content {
+  position: absolute;
+  bottom: 120px;
+  left: 64px;
+  max-width: 520px;
+  color: var(--white);
+}
+
+.slide-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 16px;
+}
+
+.slide-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 8vw, 108px);
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+}
+
+.slide-cta {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding-bottom: 4px;
+  transition: opacity 150ms ease, border-color 150ms ease;
+}
+
+.slide-cta:hover {
+  opacity: 0.6;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Hero Controls Bar --- */
+.hero-controls {
+  position: absolute;
+  bottom: 36px;
+  left: 64px;
+  right: 64px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Slide number e.g. 01 / 04 */
+.slide-counter {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.6);
+  min-width: 52px;
+}
+
+/* Progress bar track */
+.progress-track {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fill line — JS controls width and transition duration */
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--white);
+}
+
+/* Prev / Next arrow buttons */
+.hero-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 200ms ease, border-color 200ms ease;
+  flex-shrink: 0;
+}
+
+.hero-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+/* ============================================
+   NEW ARRIVALS
+   ============================================ */
+
+.new-arrivals {
+  padding: 96px 64px;
+  background-color: var(--bg);
+}
+
+.new-arrivals-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px;
+  letter-spacing: 0.03em;
+  color: var(--black);
+  line-height: 1;
+}
+
+.view-all-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 2px;
+  transition: opacity 150ms ease;
+}
+
+.view-all-link:hover {
+  opacity: 0.45;
+}
+
+/* 4-column product grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image area — portrait ratio */
+.product-image-wrap {
+  overflow: hidden;
+  background-color: #E8E6E2;
+  aspect-ratio: 3 / 4;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease-out;
+}
+
+.product-card:hover .product-image-wrap img {
+  transform: scale(1.03);
+}
+
+/* "Add to Bag" — slides up on hover */
+.add-to-bag-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  padding: 12px 0;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 250ms ease, transform 250ms ease, background-color 150ms ease;
+}
+
+.product-card:hover .add-to-bag-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.add-to-bag-btn:active {
+  background-color: var(--accent);
+}
+
+.product-status {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+
+.product-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--black);
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+
+.product-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--secondary);
+}
+
+.new-arrivals-footer {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+}
+
+.cta-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--black);
+  border: 1px solid var(--black);
+  padding: 14px 40px;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.cta-link:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* ============================================
+   COLLECTIONS
+   ============================================ */
+
+.collections {
+  padding: 0 64px 96px;
+  background-color: var(--bg);
+}
+
+.collections-header {
+  padding: 48px 0 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+/* Asymmetric editorial grid: 3 columns, 4 explicit rows */
+.collections-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4px;
+  height: 600px;
+}
+
+/* MEN — spans all 4 rows in col 1 */
+.collection-men {
+  grid-column: 1;
+  grid-row: 1 / 5;
+}
+
+/* WOMEN — spans all 4 rows in col 2 */
+.collection-women {
+  grid-column: 2;
+  grid-row: 1 / 5;
+}
+
+/* 4 small items — explicitly placed in col 3, no auto-placement */
+.collection-small {
+  grid-column: 3;
+}
+
+.collection-small:nth-of-type(3) { grid-row: 1; } /* T-Shirts */
+.collection-small:nth-of-type(4) { grid-row: 2; } /* Hoodies */
+.collection-small:nth-of-type(5) { grid-row: 3; } /* Pants */
+.collection-small:nth-of-type(6) { grid-row: 4; } /* Accessories */
+
+.collection-item {
+  position: relative;
+  overflow: hidden;
+  background-color: #D0CEC9;
+  display: block;
+  text-decoration: none;
+  height: 100%;
+}
+
+.collection-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 500ms ease-out;
+}
+
+.collection-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Bottom-fade overlay for text */
+.collection-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 20px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.68) 0%, transparent 100%);
+}
+
+.collection-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.collection-small .collection-name {
+  font-size: 18px;
+}
+
+.collection-meta {
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 56px 40px 24px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.footer-statement {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  max-width: 220px;
+}
+
+.footer-col-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 18px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.footer-link:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copyright {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.footer-tagline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* ============================================
+   RESPONSIVE — Tablet (≤ 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .slide-content {
+    left: 40px;
+    bottom: 100px;
+    max-width: 420px;
+  }
+
+  .hero-controls {
+    left: 40px;
+    right: 40px;
+  }
+
+  .new-arrivals {
+    padding: 64px 32px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collections {
+    padding: 0 32px 64px;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 280px 140px 140px;
+    height: auto;
+  }
+
+  .collection-men {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .collection-women {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .collection-small,
+  .collection-small:nth-of-type(3),
+  .collection-small:nth-of-type(4),
+  .collection-small:nth-of-type(5),
+  .collection-small:nth-of-type(6) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .footer {
+    padding: 48px 32px 24px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Mobile (≤ 640px)
+   ============================================ */
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0 20px;
+    height: 52px;
+  }
+
+  .slide-content {
+    left: 24px;
+    right: 24px;
+    bottom: 88px;
+    max-width: none;
+  }
+
+  .slide-headline {
+    font-size: clamp(44px, 13vw, 72px);
+  }
+
+  .hero-controls {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .hero-btn {
+    display: none;
+  }
+
+  .new-arrivals {
+    padding: 48px 20px;
+  }
+
+  .new-arrivals-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .collections {
+    padding: 0 20px 56px;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    height: auto;
+  }
+
+  .collection-men,
+  .collection-women,
+  .collection-small {
+    grid-column: auto;
+    grid-row: auto;
+    height: 280px;
+  }
+
+  .footer {
+    padding: 40px 20px 20px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .mobile-nav-link {
+    font-size: 38px;
+  }
+}
+
+
+/* ============================================
+   SHOP / CATEGORY PAGES
+   Added for: men.html, women.html,
+   new-arrivals.html, accessories.html
+   ============================================ */
+
+/* --- Navbar: static (opaque from load) ---
+   On shop pages there is no full-screen hero,
+   so the navbar is always opaque. We add this
+   class to <header> instead of 'on-hero'. */
+.navbar-static {
+  background-color: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+/* When .navbar-static is used, nav text is always dark */
+.navbar-static .nav-logo,
+.navbar-static .nav-link,
+.navbar-static .nav-icon,
+.navbar-static .nav-dropdown-trigger {
+  color: var(--black);
+}
+
+.navbar-static .hamburger span {
+  background-color: var(--black);
+}
+
+/* ============================================
+   PAGE HEADER — Editorial collection banner
+   A horizontal section just below the navbar.
+   Left: collection identity. Right: image.
+   ============================================ */
+
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: calc(100vh - 56px);
+  min-height: 600px;
+  max-height: 900px;
+  margin-top: 56px;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Left: text content */
+.page-header-content {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 48px 64px;
+  background-color: var(--bg);
+  overflow: hidden;
+}
+
+/* Archival stamp above the title */
+.page-header-stamp {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+/* Large display title */
+.page-header-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 8vw, 120px);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+/* Short editorial description */
+.page-header-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--secondary);
+  line-height: 1.65;
+  max-width: 320px;
+}
+
+/* Right: image container */
+.page-header-image {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #D8D6D1;
+  box-sizing: border-box;
+}
+
+.page-header-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Accent bar on the left edge of the image */
+.page-header-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: var(--accent);
+  z-index: 1;
+}
+
+/* ============================================
+   FILTER BAR
+   Sits between page header and product grid.
+   ============================================ */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 64px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg);
+  /* Sticky so filters stay visible while scrolling */
+  position: sticky;
+  top: 56px; /* height of navbar */
+  z-index: 10;
+}
+
+/* Left: filter buttons */
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Each filter button */
+.filter-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  background: none;
+  border: 1px solid transparent;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.filter-btn:hover {
+  color: var(--black);
+}
+
+/* Active filter — JS toggles this class */
+.filter-btn.active {
+  color: var(--black);
+  border-color: var(--black);
+}
+
+/* Right: product count + sort */
+.filter-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-count {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--secondary);
+}
+
+/* Sort dropdown — native select, styled minimally */
+.sort-select {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 4px 20px 4px 0;
+  cursor: pointer;
+  /* Remove default arrow on some browsers */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Custom arrow via background SVG */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23111111' stroke-width='1.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+}
+
+.sort-select:focus {
+  outline: none;
+}
+
+/* ============================================
+   SHOP PRODUCT GRID
+   Reuses .product-card from homepage.
+   Wrapper with correct padding for shop pages.
+   ============================================ */
+
+.shop-section {
+  padding: 48px 64px 96px;
+  background-color: var(--bg);
+}
+
+/* 3-column grid for shop pages (gives more breathing room) */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* 4-column variant for larger collections */
+.shop-grid.four-col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ============================================
+   RESPONSIVE — SHOP PAGES
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .page-header {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .page-header-content {
+    min-height: 60vh;
+    padding: 32px 32px;
+    order: 1; /* TEXT FIRST */
+  }
+
+  .page-header-image {
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    order: 2; /* IMAGE STACKED BELOW TEXT ON TABLET/MOBILE */
+  }
+
+  .page-header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-header-title {
+    font-size: clamp(56px, 10vw, 90px);
+  }
+
+  .filter-bar {
+    padding: 16px 32px;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: static; /* Un-sticky on tablet to avoid layout issues */
+  }
+
+  .shop-section {
+    padding: 32px 32px 64px;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .shop-grid.four-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-header-content {
+    padding: 28px 20px;
+  }
+
+  .page-header-title {
+    font-size: clamp(52px, 14vw, 80px);
+  }
+
+  .filter-bar {
+    padding: 14px 20px;
+    gap: 8px;
+  }
+
+  .filter-group {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .filter-btn {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .shop-section {
+    padding: 24px 20px 56px;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+
+/* ============================================
+   BLOG / JOURNAL PAGE — blog.html
+   ============================================ */
+
+/* --- Journal Header --- */
+.journal-header {
+  margin-top: 56px; /* below fixed navbar */
+  padding: 64px 64px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.journal-eyebrow {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.journal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.journal-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--secondary);
+  max-width: 480px;
+}
+
+/* --- Featured Story --- */
+.featured-story {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  min-height: 480px;
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-story-image {
+  overflow: hidden;
+  background-color: #D0CEC9;
+  position: relative;
+}
+
+.featured-story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 600ms ease-out;
+}
+
+.featured-story:hover .featured-story-image img {
+  transform: scale(1.02);
+}
+
+/* FEATURED label in corner of image */
+.featured-story-image::after {
+  content: 'FEATURED';
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--white);
+  background-color: var(--accent);
+  padding: 4px 10px;
+}
+
+.featured-story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 48px 64px;
+  border-left: 1px solid var(--border);
+}
+
+.article-category {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.article-date {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--secondary);
+  margin-bottom: 8px;
+}
+
+.featured-story-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.featured-story-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--secondary);
+  margin-bottom: 32px;
+}
+
+.read-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 3px;
+  align-self: flex-start;
+  transition: opacity 150ms ease;
+}
+
+.read-link:hover {
+  opacity: 0.45;
+}
+
+/* --- Article Grid / Archive --- */
+.article-section {
+  padding: 64px 64px 96px;
+}
+
+.article-section-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+
+/* Primary grid: 2 columns, asymmetric article sizes */
+.article-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* No gap — use borders as dividers */
+}
+
+/* Individual article block */
+.article-block {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Left-column article gets a right border */
+.article-block:nth-child(odd) {
+  padding-right: 40px;
+  border-right: 1px solid var(--border);
+}
+
+.article-block:nth-child(even) {
+  padding-left: 40px;
+}
+
+/* Last row — no bottom border */
+.article-block:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.article-image-wrap {
+  overflow: hidden;
+  background-color: #D8D6D1;
+  aspect-ratio: 4 / 3;
+}
+
+.article-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease-out;
+}
+
+.article-block:hover .article-image-wrap img {
+  transform: scale(1.03);
+}
+
+.article-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.article-meta-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  margin-bottom: 12px;
+  transition: opacity 150ms ease;
+}
+
+.article-block:hover .article-title {
+  opacity: 0.65;
+}
+
+.article-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+/* Wide / full-span article variant — used for visual break */
+.article-block.wide {
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr 2fr;
+  padding-right: 0;
+  padding-left: 0;
+  border-right: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-block.wide .article-image-wrap {
+  aspect-ratio: 16 / 9;
+}
+
+.article-block.wide .article-title {
+  font-size: clamp(28px, 3.5vw, 42px);
+}
+
+/* ============================================
+   ARTICLE DETAIL PAGE — article.html
+   Full-form editorial document
+   ============================================ */
+
+.article-detail {
+  margin-top: 56px;
+  background-color: var(--bg);
+}
+
+.article-detail-header {
+  padding: 56px 64px 36px;
+  border-bottom: 1px solid var(--border);
+  max-width: 960px;
+}
+
+.article-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color 150ms ease;
+}
+
+.article-back-link:hover {
+  color: var(--accent);
+}
+
+.article-detail-stamp {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 12px;
+}
+
+.article-detail-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  margin-bottom: 24px;
+}
+
+.article-detail-meta {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.article-detail-meta .article-category {
+  margin-bottom: 0;
+}
+
+.article-detail-hero {
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background-color: #D8D6D1;
+  position: relative;
+}
+
+.article-detail-hero img {
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+}
+
+.article-detail-body {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 64px 32px 80px;
+}
+
+.article-lead {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--black);
+  margin-bottom: 36px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 32px;
+}
+
+.article-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #2B2A27;
+  margin-bottom: 28px;
+}
+
+.article-quote {
+  border-left: 2px solid var(--accent);
+  padding: 16px 0 16px 24px;
+  margin: 44px 0;
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--black);
+  background-color: rgba(193, 67, 46, 0.04);
+}
+
+.article-footer-nav {
+  border-top: 1px solid var(--border);
+  padding: 48px 32px 64px;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.article-footer-archive {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+/* ============================================
+   LEGAL PAGES — terms.html + privacy.html
+   Shared system for both documents.
+   ============================================ */
+
+.legal-header {
+  margin-top: 56px;
+  padding: 64px 64px 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-eyebrow {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.legal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.legal-effective {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--secondary);
+}
+
+/* --- Two-column layout --- */
+.legal-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+  padding: 0 64px 96px;
+}
+
+/* LEFT: sticky table of contents */
+.legal-toc {
+  position: sticky;
+  top: 72px; /* navbar height + gap */
+  padding: 48px 32px 48px 0;
+  border-right: 1px solid var(--border);
+}
+
+.legal-toc-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
+
+.legal-toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.legal-toc-link {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--secondary);
+  text-decoration: none;
+  display: block;
+  padding: 4px 0;
+  border-left: 2px solid transparent;
+  padding-left: 8px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.legal-toc-link:hover {
+  color: var(--black);
+  border-left-color: var(--border);
+}
+
+/* Active TOC item — JS toggles this */
+.legal-toc-link.active {
+  color: var(--black);
+  border-left-color: var(--accent);
+}
+
+/* RIGHT: legal document content */
+.legal-content {
+  padding: 48px 0 48px 64px;
+  /* Narrow readable line length */
+  max-width: 660px;
+}
+
+.legal-section {
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.legal-section-number {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.legal-section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  color: var(--black);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.legal-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--secondary);
+}
+
+.legal-text + .legal-text {
+  margin-top: 12px;
+}
+
+/* Demo disclaimer callout */
+.legal-demo-notice {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--secondary);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* ============================================
+   RESPONSIVE — BLOG + LEGAL PAGES
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .journal-header {
+    padding: 48px 32px 36px;
+  }
+
+  .featured-story {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .featured-story-image {
+    height: 320px;
+  }
+
+  .featured-story-content {
+    padding: 36px 32px;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .article-section {
+    padding: 48px 32px 64px;
+  }
+
+  .legal-header {
+    padding: 48px 32px 32px;
+  }
+
+  .legal-body {
+    grid-template-columns: 1fr;
+    padding: 0 32px 64px;
+  }
+
+  .legal-toc {
+    position: static;
+    padding: 32px 0 24px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .legal-toc-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+
+  .legal-toc-link {
+    border-left: none;
+    padding-left: 0;
+    font-size: 10px;
+  }
+
+  .legal-content {
+    padding: 32px 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .journal-header {
+    padding: 36px 20px 28px;
+  }
+
+  .featured-story-content {
+    padding: 28px 20px;
+  }
+
+  .article-section {
+    padding: 36px 20px 56px;
+  }
+
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-block {
+    grid-template-columns: 1fr;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+
+  .article-block.wide {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-header {
+    padding: 32px 20px 24px;
+  }
+
+  .legal-body {
+    padding: 0 20px 48px;
+  }
+
+  .legal-content {
+    padding: 24px 0;
+  }
+}
+
+
+/* ============================================
+   SEARCH OVERLAY + BAG PANEL
+   Editorial archive UI — not a SaaS modal.
+   ============================================ */
+
+body.gl-lock {
+  overflow: hidden;
+}
+
+.product-card.is-hidden,
+.acc-featured.is-hidden {
+  display: none !important;
+}
+
+.search-overlay,
+.bag-panel {
+  position: fixed;
+  z-index: 200;
+  background-color: var(--bg);
+  color: var(--black);
+}
+
+.search-overlay {
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.search-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.search-overlay-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 56px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-overlay-label {
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.search-overlay-bar input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  color: var(--black);
+}
+
+.search-overlay-bar input::placeholder {
+  color: var(--border);
+}
+
+.search-close,
+.bag-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  padding: 0;
+}
+
+.search-close:hover,
+.bag-close:hover {
+  color: var(--accent);
+}
+
+.search-results {
+  overflow-y: auto;
+  padding: 24px 32px 48px;
+}
+
+.search-empty {
+  max-width: 520px;
+}
+
+.search-empty p,
+.search-meta {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.search-pages {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.search-pages a,
+.search-result {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--black);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+
+.search-pages a:hover,
+.search-result:hover {
+  color: var(--accent);
+}
+
+.search-pages span:first-child,
+.search-result-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+}
+
+.search-pages span:last-child,
+.search-result-meta {
+  margin-left: auto;
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.search-result img {
+  width: 56px;
+  height: 70px;
+  object-fit: cover;
+  background-color: #D8D6D1;
+  flex-shrink: 0;
+}
+
+.bag-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+  background-color: rgba(17, 17, 17, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.bag-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.bag-panel {
+  top: 0;
+  right: 0;
+  width: min(420px, 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 180ms ease, visibility 180ms ease;
+}
+
+.bag-panel.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.bag-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.bag-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+}
+
+.bag-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 24px 24px;
+}
+
+.bag-empty {
+  padding: 40px 0;
+}
+
+.bag-empty p {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--secondary);
+  margin-bottom: 16px;
+}
+
+.bag-empty a {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
+.bag-item {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.bag-item img {
+  width: 72px;
+  height: 90px;
+  object-fit: cover;
+  background-color: #D8D6D1;
+}
+
+.bag-item-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.bag-item-price,
+.bag-item-line {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+
+.bag-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bag-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+}
+
+.bag-qty button,
+.bag-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  padding: 0;
+}
+
+.bag-qty span {
+  font-family: 'Courier Prime', monospace;
+  font-size: 12px;
+  min-width: 12px;
+  text-align: center;
+}
+
+.bag-remove {
+  color: var(--secondary);
+}
+
+.bag-remove:hover,
+.bag-qty button:hover {
+  color: var(--accent);
+}
+
+.bag-footer {
+  border-top: 1px solid var(--border);
+  padding: 20px 24px 24px;
+  flex-shrink: 0;
+}
+
+.bag-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bag-subtotal strong {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+
+.bag-checkout {
+  width: 100%;
+  background-color: var(--black);
+  color: var(--white);
+  border: none;
+  padding: 14px 20px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.bag-checkout:hover {
+  background-color: var(--accent);
+}
+
+.bag-demo-note,
+.bag-demo-msg {
+  margin-top: 12px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .search-overlay-bar,
+  .search-results {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-overlay-bar,
+  .search-results {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .search-overlay-bar input {
+    font-size: 22px;
+  }
+
+  .search-overlay-label {
+    display: none;
+  }
+
+  .mobile-nav {
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding-top: 72px;
+  }
+
+  .mobile-nav-group .mobile-nav-link {
+    font-size: 24px;
+  }
+}
+
+

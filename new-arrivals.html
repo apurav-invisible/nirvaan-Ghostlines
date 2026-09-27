@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>New Arrivals — GHOSTLINE</title>
+  <meta name="description"
+    content="The latest layer. GHOSTLINE New Arrivals — fresh drops across men's and women's. Ghost sign tees, hoodies, cargos, and accessories." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Shop</p>
+        <ul>
+          <li><a href="men.html" class="mobile-nav-link">Men</a></li>
+          <li><a href="women.html" class="mobile-nav-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Collections</p>
+        <ul>
+          <li><a href="men.html?filter=t-shirts" class="mobile-nav-link">T-Shirts</a></li>
+          <li><a href="men.html?filter=hoodies" class="mobile-nav-link">Hoodies</a></li>
+          <li><a href="men.html?filter=pants" class="mobile-nav-link">Pants</a></li>
+          <li><a href="accessories.html" class="mobile-nav-link">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Journal / Info</p>
+        <ul>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="terms.html" class="mobile-nav-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="mobile-nav-link">Privacy Policy</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="mobile-nav-meta">
+      <a href="https://www.instagram.com/ghostlines/">Instagram</a>
+      <a href="https://x.com/ghostlines/">X</a>
+    </div>
+  </nav>
+
+  <header id="navbar" class="navbar navbar-static scrolled" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="GHOSTLINE home">GHOSTLINE</a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false"
+            aria-haspopup="true">Shop</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false"
+            aria-haspopup="true">Collections</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html?filter=t-shirts">T-Shirts</a></li>
+            <li><a href="men.html?filter=hoodies">Hoodies</a></li>
+            <li><a href="men.html?filter=pants">Pants</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Journal
+            / Info</button>
+          <ul class="nav-dropdown">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="nav-icon" id="search-btn" aria-label="Search" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+      </button>
+      <button class="nav-icon" id="bag-btn" aria-label="Shopping bag" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 01-8 0"></path>
+        </svg>
+        <span class="bag-count" id="bag-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       PAGE HEADER — New Arrivals editorial banner
+       This one has a different tone: urgency,
+       freshness, "latest layer" editorial language.
+       ========================================== -->
+  <section class="page-header" aria-label="New Arrivals header">
+
+    <div class="page-header-content">
+      <!-- Archival lot number — adds authenticity -->
+      <p class="page-header-stamp">Drop 001 · Layer 03 · Just Landed</p>
+      <h1 class="page-header-title">New<br>Arrivals</h1>
+      <p class="page-header-desc">
+        The latest layer.<br>
+        This wasn't supposed to survive the repaint.
+      </p>
+    </div>
+
+    <div class="page-header-image">
+      <img src="assets/images/editorial/new-arrivals-hero.jpg" alt="GHOSTLINE New Arrivals — latest drop editorial" />
+    </div>
+
+  </section>
+
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" role="navigation" aria-label="Product filters">
+    <div class="filter-group" role="group" aria-label="Filter by category">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Men</button>
+      <button class="filter-btn">Women</button>
+      <button class="filter-btn">Accessories</button>
+    </div>
+    <div class="filter-right">
+      <span class="product-count">8 PIECES</span>
+      <label for="sort-new" class="sr-only">Sort by</label>
+      <select class="sort-select" id="sort-new" aria-label="Sort products">
+        <option value="new">Newest First</option>
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: Low–High</option>
+        <option value="price-desc">Price: High–Low</option>
+      </select>
+    </div>
+  </div>
+
+
+  <!-- PRODUCT GRID — 4 columns, higher density for new arrivals -->
+  <main class="shop-section" aria-labelledby="new-arrivals-grid-label">
+    <p class="sr-only" id="new-arrivals-grid-label">New Arrivals products</p>
+
+    <div class="shop-grid four-col">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-filter="men">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/layer-03-tee.jpg" alt="LAYER 03 TEE — black graphic tee" loading="lazy" />
+          <button class="add-to-bag-btn" data-product="LAYER 03 TEE" aria-label="Add LAYER 03 TEE to bag">Add to
+            Bag</button>
+        </div>
+        <!-- Accent stamp for brand-new items -->
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Black</p>
+        <p class="product-name">LAYER 03 TEE</p>
+        <p class="product-price">₹1,899</p>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-filter="men">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/block-12-hoodie.jpg" alt="BLOCK 12 HOODIE — heavyweight pullover"
+            loading="lazy" />
+          <button class="add-to-bag-btn" data-product="BLOCK 12 HOODIE" aria-label="Add BLOCK 12 HOODIE to bag">Add to
+            Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Ecru</p>
+        <p class="product-name">BLOCK 12 HOODIE</p>
+        <p class="product-price">₹3,499</p>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-filter="men">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/lot-004-cargo.jpg" alt="LOT NO. 004 CARGO — wide leg cargo pants"
+            loading="lazy" />
+          <button class="add-to-bag-btn" data-product="LOT NO. 004 CARGO" aria-label="Add LOT NO. 004 CARGO to bag">Add
+            to Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Slate</p>
+        <p class="product-name">LOT NO. 004 CARGO</p>
+        <p class="product-price">₹3,199</p>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-filter="accessories">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/night-wall-cap.jpg" alt="NIGHT WALL CAP — structured 6-panel cap"
+            loading="lazy" />
+          <button class="add-to-bag-btn" data-product="NIGHT WALL CAP" aria-label="Add NIGHT WALL CAP to bag">Add to
+            Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Black</p>
+        <p class="product-name">NIGHT WALL CAP</p>
+        <p class="product-price">₹1,299</p>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="product-card" data-filter="women">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/womens-ghost-tee.jpg" alt="GHOST SIGN TEE Women — oversized fit"
+            loading="lazy" />
+          <button class="add-to-bag-btn" data-product="GHOST SIGN TEE" aria-label="Add GHOST SIGN TEE to bag">Add to
+            Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Washed Black</p>
+        <p class="product-name">GHOST SIGN TEE</p>
+        <p class="product-price">₹1,799</p>
+      </article>
+
+      <!-- Product 6 -->
+      <article class="product-card" data-filter="women">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/womens-wall-hoodie.jpg" alt="WALL HOODIE Women — oversized fleece"
+            loading="lazy" />
+          <button class="add-to-bag-btn" data-product="WALL HOODIE" aria-label="Add WALL HOODIE to bag">Add to
+            Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Bone</p>
+        <p class="product-name">WALL HOODIE</p>
+        <p class="product-price">₹3,299</p>
+      </article>
+
+      <!-- Product 7 -->
+      <article class="product-card" data-filter="women">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/womens-layer-cargo.jpg" alt="LAYER CARGO Women — wide-leg utility"
+            loading="lazy" />
+          <button class="add-to-bag-btn" data-product="LAYER CARGO" aria-label="Add LAYER CARGO to bag">Add to
+            Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Slate Grey</p>
+        <p class="product-name">LAYER CARGO</p>
+        <p class="product-price">₹2,999</p>
+      </article>
+
+      <!-- Product 8 -->
+      <article class="product-card" data-filter="women">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/womens-concrete-dress.jpg" alt="CONCRETE DRESS — minimal slip dress"
+            loading="lazy" />
+          <button class="add-to-bag-btn" data-product="CONCRETE DRESS" aria-label="Add CONCRETE DRESS to bag">Add to
+            Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Just Dropped — Washed Grey</p>
+        <p class="product-name">CONCRETE DRESS</p>
+        <p class="product-price">₹2,499</p>
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">GHOSTLINE</span>
+        <p class="footer-statement">
+          Prints what the city painted over.<br>
+          History doesn't vanish — it fades into the next layer.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Shop</p>
+        <ul class="footer-links">
+          <li><a href="men.html" class="footer-link">Men</a></li>
+          <li><a href="women.html" class="footer-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+          <li><a href="#" class="footer-link">Sale</a></li>
+          <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Information</p>
+        <ul class="footer-links" style="margin-bottom: 32px;">
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+        <p class="footer-col-label">Social</p>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/ghostlines/" class="footer-link">Instagram</a></li>
+          <li><a href="https://x.com/ghostlines/" class="footer-link">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">EST. LAYER 3 &nbsp;·&nbsp; PRINTED, NOT PAINTED &nbsp;·&nbsp; © GHOSTLINE</p>
+      <p class="footer-tagline">NOTHING FADES CLEAN.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

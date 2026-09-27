@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Terms &amp; Conditions — GHOSTLINE</title>
+  <meta name="description" content="GHOSTLINE Terms and Conditions. Please read our terms carefully before placing an order." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Shop</p>
+        <ul>
+          <li><a href="men.html" class="mobile-nav-link">Men</a></li>
+          <li><a href="women.html" class="mobile-nav-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Collections</p>
+        <ul>
+          <li><a href="men.html?filter=t-shirts" class="mobile-nav-link">T-Shirts</a></li>
+          <li><a href="men.html?filter=hoodies" class="mobile-nav-link">Hoodies</a></li>
+          <li><a href="men.html?filter=pants" class="mobile-nav-link">Pants</a></li>
+          <li><a href="accessories.html" class="mobile-nav-link">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Journal / Info</p>
+        <ul>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="terms.html" class="mobile-nav-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="mobile-nav-link">Privacy Policy</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="mobile-nav-meta">
+      <a href="https://www.instagram.com/ghostlines/">Instagram</a>
+      <a href="https://x.com/ghostlines/">X</a>
+    </div>
+  </nav>
+
+  <header id="navbar" class="navbar navbar-static scrolled" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="GHOSTLINE home">GHOSTLINE</a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Collections</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html?filter=t-shirts">T-Shirts</a></li>
+            <li><a href="men.html?filter=hoodies">Hoodies</a></li>
+            <li><a href="men.html?filter=pants">Pants</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Journal / Info</button>
+          <ul class="nav-dropdown">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="nav-icon" id="search-btn" aria-label="Search" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+      </button>
+      <button class="nav-icon" id="bag-btn" aria-label="Shopping bag" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 01-8 0"></path>
+        </svg>
+        <span class="bag-count" id="bag-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       LEGAL HEADER
+       ========================================== -->
+  <header class="legal-header">
+    <p class="legal-eyebrow">GHOSTLINE / TERMS</p>
+    <h1 class="legal-title">Terms &amp;<br>Conditions</h1>
+    <p class="legal-effective">Effective Date: 01 September 2026</p>
+  </header>
+
+
+  <!-- ==========================================
+       TWO-COLUMN LEGAL BODY
+       Left: sticky TOC. Right: document content.
+       ========================================== -->
+  <div class="legal-body">
+
+    <!-- LEFT — Sticky table of contents -->
+    <aside class="legal-toc" aria-label="Document sections">
+      <p class="legal-toc-label">Sections</p>
+      <ul class="legal-toc-list">
+        <!-- href matches the id on each section below -->
+        <li><a href="#section-01" class="legal-toc-link active">01 — General</a></li>
+        <li><a href="#section-02" class="legal-toc-link">02 — Orders</a></li>
+        <li><a href="#section-03" class="legal-toc-link">03 — Products</a></li>
+        <li><a href="#section-04" class="legal-toc-link">04 — Pricing</a></li>
+        <li><a href="#section-05" class="legal-toc-link">05 — Shipping</a></li>
+        <li><a href="#section-06" class="legal-toc-link">06 — Returns</a></li>
+        <li><a href="#section-07" class="legal-toc-link">07 — IP</a></li>
+        <li><a href="#section-08" class="legal-toc-link">08 — User Content</a></li>
+        <li><a href="#section-09" class="legal-toc-link">09 — Liability</a></li>
+        <li><a href="#section-10" class="legal-toc-link">10 — Privacy</a></li>
+        <li><a href="#section-11" class="legal-toc-link">11 — Changes</a></li>
+        <li><a href="#section-12" class="legal-toc-link">12 — Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- RIGHT — Document content -->
+    <main class="legal-content" aria-label="Terms and conditions document">
+
+      <!-- Demo notice -->
+      <p class="legal-demo-notice">
+        DEMO / HACKATHON PROJECT — This is a fictional document created for
+        demonstration purposes only. GHOSTLINE is a concept brand. All
+        contact information, addresses and legal details below are placeholder.
+      </p>
+
+      <!-- 01 -->
+      <section class="legal-section" id="section-01">
+        <p class="legal-section-number">01</p>
+        <h2 class="legal-section-title">General</h2>
+        <p class="legal-text">
+          By accessing or using the GHOSTLINE website (ghostline.in) and placing
+          orders through it, you agree to be bound by these Terms and Conditions.
+          Please read them carefully before making a purchase.
+        </p>
+        <p class="legal-text">
+          These terms apply to all visitors, users and customers of the website.
+          If you do not agree with any part of these terms, you may not access or
+          use the website.
+        </p>
+        <p class="legal-text">
+          GHOSTLINE reserves the right to update or change these terms at any time.
+          Continued use of the website following any changes constitutes acceptance
+          of those changes.
+        </p>
+      </section>
+
+      <!-- 02 -->
+      <section class="legal-section" id="section-02">
+        <p class="legal-section-number">02</p>
+        <h2 class="legal-section-title">Orders</h2>
+        <p class="legal-text">
+          When you place an order on our website, you are making an offer to
+          purchase the selected products at the stated price. We reserve the
+          right to accept or decline any order at our discretion.
+        </p>
+        <p class="legal-text">
+          An order confirmation email does not constitute acceptance of your
+          order. Acceptance occurs only when your order is dispatched.
+          In the event that we are unable to fulfil your order, we will notify
+          you and issue a full refund.
+        </p>
+        <p class="legal-text">
+          You must be at least 16 years of age to place an order. By submitting
+          an order, you confirm that you meet this requirement.
+        </p>
+      </section>
+
+      <!-- 03 -->
+      <section class="legal-section" id="section-03">
+        <p class="legal-section-number">03</p>
+        <h2 class="legal-section-title">Products &amp; Availability</h2>
+        <p class="legal-text">
+          All products are subject to availability. We endeavour to keep product
+          listings accurate but cannot guarantee that items shown on the website
+          are always in stock.
+        </p>
+        <p class="legal-text">
+          Product images are for illustrative purposes. Colours may appear
+          differently on screen depending on your display settings. We aim to
+          represent products accurately but cannot guarantee an exact colour match.
+        </p>
+        <p class="legal-text">
+          GHOSTLINE releases products in limited drops. Once a drop sells out, it
+          may not be restocked. We do not hold items or offer pre-orders unless
+          explicitly stated.
+        </p>
+      </section>
+
+      <!-- 04 -->
+      <section class="legal-section" id="section-04">
+        <p class="legal-section-number">04</p>
+        <h2 class="legal-section-title">Pricing &amp; Payment</h2>
+        <p class="legal-text">
+          All prices are listed in Indian Rupees (₹) and are inclusive of
+          applicable taxes. Shipping charges are displayed separately at checkout.
+        </p>
+        <p class="legal-text">
+          We accept major debit and credit cards, UPI, and other payment methods
+          as listed at checkout. Payment is processed securely through our
+          third-party payment provider.
+        </p>
+        <p class="legal-text">
+          We reserve the right to change prices without notice. Prices in effect
+          at the time of your order confirmation will apply to that order.
+        </p>
+      </section>
+
+      <!-- 05 -->
+      <section class="legal-section" id="section-05">
+        <p class="legal-section-number">05</p>
+        <h2 class="legal-section-title">Shipping</h2>
+        <p class="legal-text">
+          We currently ship to addresses within India. International shipping
+          may be available for select locations — please check the checkout
+          page for availability.
+        </p>
+        <p class="legal-text">
+          Estimated delivery times are provided at checkout and are subject to
+          change due to courier delays, weather conditions, or public holidays.
+          GHOSTLINE is not responsible for delays caused by third-party couriers.
+        </p>
+        <p class="legal-text">
+          Risk of loss and title for purchased items passes to you upon dispatch.
+          We are not liable for items lost or damaged in transit once a valid
+          dispatch confirmation has been issued.
+        </p>
+      </section>
+
+      <!-- 06 -->
+      <section class="legal-section" id="section-06">
+        <p class="legal-section-number">06</p>
+        <h2 class="legal-section-title">Returns &amp; Refunds</h2>
+        <p class="legal-text">
+          We accept returns on unworn, unwashed items in their original condition
+          and packaging within 14 days of delivery. Items marked as Final Sale
+          are not eligible for return.
+        </p>
+        <p class="legal-text">
+          To initiate a return, contact us at returns@ghostline.in (demo address)
+          with your order number and reason for return. We will provide a
+          return shipping label within 3 business days.
+        </p>
+        <p class="legal-text">
+          Refunds are processed to the original payment method within 7–10 business
+          days of receiving the returned item. Shipping charges are non-refundable
+          unless the return is due to our error.
+        </p>
+      </section>
+
+      <!-- 07 -->
+      <section class="legal-section" id="section-07">
+        <p class="legal-section-number">07</p>
+        <h2 class="legal-section-title">Intellectual Property</h2>
+        <p class="legal-text">
+          All content on this website — including but not limited to typography,
+          graphics, photography, product designs, copy, and the GHOSTLINE brand
+          name and logo — is the exclusive property of GHOSTLINE and is protected
+          by applicable intellectual property laws.
+        </p>
+        <p class="legal-text">
+          You may not reproduce, distribute, modify, create derivative works from,
+          publicly display, or in any way exploit any content on this website
+          without our prior written consent.
+        </p>
+      </section>
+
+      <!-- 08 -->
+      <section class="legal-section" id="section-08">
+        <p class="legal-section-number">08</p>
+        <h2 class="legal-section-title">User Content</h2>
+        <p class="legal-text">
+          If you submit, post, or share content related to GHOSTLINE — including
+          reviews, photographs, or social media posts — you grant us a
+          non-exclusive, royalty-free licence to use, reproduce and display
+          that content in connection with our marketing and promotional activities.
+        </p>
+        <p class="legal-text">
+          You represent that any content you submit is your own original work
+          and does not infringe the rights of any third party.
+        </p>
+      </section>
+
+      <!-- 09 -->
+      <section class="legal-section" id="section-09">
+        <p class="legal-section-number">09</p>
+        <h2 class="legal-section-title">Limitation of Liability</h2>
+        <p class="legal-text">
+          To the fullest extent permitted by law, GHOSTLINE shall not be liable
+          for any indirect, incidental, special or consequential damages arising
+          from your use of the website or purchase of products.
+        </p>
+        <p class="legal-text">
+          Our total liability to you in connection with any claim arising from
+          these terms shall not exceed the amount you paid for the relevant order.
+        </p>
+      </section>
+
+      <!-- 10 -->
+      <section class="legal-section" id="section-10">
+        <p class="legal-section-number">10</p>
+        <h2 class="legal-section-title">Privacy</h2>
+        <p class="legal-text">
+          Your use of this website is also governed by our Privacy Policy,
+          which is incorporated into these Terms and Conditions by reference.
+          Please review our <a href="privacy.html" style="color: var(--black); border-bottom: 1px solid var(--border);">Privacy Policy</a>
+          to understand our practices.
+        </p>
+      </section>
+
+      <!-- 11 -->
+      <section class="legal-section" id="section-11">
+        <p class="legal-section-number">11</p>
+        <h2 class="legal-section-title">Changes to These Terms</h2>
+        <p class="legal-text">
+          We may update these Terms and Conditions from time to time. We will
+          post the revised terms on this page with an updated effective date.
+          Your continued use of the website after changes are posted constitutes
+          your acceptance of the revised terms.
+        </p>
+      </section>
+
+      <!-- 12 -->
+      <section class="legal-section" id="section-12">
+        <p class="legal-section-number">12</p>
+        <h2 class="legal-section-title">Contact</h2>
+        <p class="legal-text">
+          For any queries regarding these terms, please contact us:
+        </p>
+        <p class="legal-text" style="margin-top: 16px;">
+          GHOSTLINE<br>
+          [Demo Address — Layer 3, Urban Block, Mumbai, India]<br>
+          <span style="font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 0.1em;">hello@ghostline.in (demo)</span>
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">GHOSTLINE</span>
+        <p class="footer-statement">
+          Prints what the city painted over.<br>
+          History doesn't vanish — it fades into the next layer.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Shop</p>
+        <ul class="footer-links">
+          <li><a href="men.html" class="footer-link">Men</a></li>
+          <li><a href="women.html" class="footer-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+          <li><a href="#" class="footer-link">Sale</a></li>
+          <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Information</p>
+        <ul class="footer-links" style="margin-bottom: 32px;">
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+        <p class="footer-col-label">Social</p>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/ghostlines/" class="footer-link">Instagram</a></li>
+          <li><a href="https://x.com/ghostlines/" class="footer-link">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">EST. LAYER 3 &nbsp;·&nbsp; PRINTED, NOT PAINTED &nbsp;·&nbsp; © GHOSTLINE</p>
+      <p class="footer-tagline">NOTHING FADES CLEAN.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

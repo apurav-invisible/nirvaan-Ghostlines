@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Accessories — GHOSTLINE</title>
+  <meta name="description" content="GHOSTLINE Accessories — caps, bags, and small goods built from the same urban material as the clothing. Nothing fades clean." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ============================================
+       ACCESSORIES-SPECIFIC: Featured item layout.
+       One large editorial product sits above
+       the standard grid. Only on this page.
+       ============================================ */
+
+    .acc-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg);
+    }
+
+    /* Left: large image — portrait, fills height */
+    .acc-featured-image {
+      overflow: hidden;
+      background-color: #D8D6D1;
+      min-height: 480px;
+    }
+
+    .acc-featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 500ms ease-out;
+    }
+
+    .acc-featured-image:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Right: product details, editorially placed */
+    .acc-featured-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 64px 64px;
+    }
+
+    .acc-featured-stamp {
+      font-family: 'Courier Prime', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+
+    /* Large product name — editorial scale */
+    .acc-featured-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 0.9;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .acc-featured-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: var(--secondary);
+      line-height: 1.7;
+      max-width: 280px;
+      margin-bottom: 32px;
+    }
+
+    .acc-featured-price {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+
+    /* Add-to-bag for the featured item — full-width button style */
+    .acc-featured-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      background-color: var(--black);
+      border: none;
+      padding: 14px 32px;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background-color 200ms ease;
+    }
+
+    .acc-featured-btn:hover {
+      background-color: var(--accent);
+    }
+
+    @media (max-width: 1024px) {
+      .acc-featured {
+        grid-template-columns: 1fr;
+      }
+
+      .acc-featured-image {
+        min-height: 320px;
+      }
+
+      .acc-featured-content {
+        padding: 32px 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .acc-featured-image {
+        min-height: 260px;
+      }
+
+      .acc-featured-content {
+        padding: 28px 20px;
+      }
+
+      .acc-featured-name {
+        font-size: clamp(40px, 12vw, 64px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Shop</p>
+        <ul>
+          <li><a href="men.html" class="mobile-nav-link">Men</a></li>
+          <li><a href="women.html" class="mobile-nav-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Collections</p>
+        <ul>
+          <li><a href="men.html?filter=t-shirts" class="mobile-nav-link">T-Shirts</a></li>
+          <li><a href="men.html?filter=hoodies" class="mobile-nav-link">Hoodies</a></li>
+          <li><a href="men.html?filter=pants" class="mobile-nav-link">Pants</a></li>
+          <li><a href="accessories.html" class="mobile-nav-link">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Journal / Info</p>
+        <ul>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="terms.html" class="mobile-nav-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="mobile-nav-link">Privacy Policy</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="mobile-nav-meta">
+      <a href="https://www.instagram.com/ghostlines/">Instagram</a>
+      <a href="https://x.com/ghostlines/">X</a>
+    </div>
+  </nav>
+
+  <header id="navbar" class="navbar navbar-static scrolled" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="GHOSTLINE home">GHOSTLINE</a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Collections</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html?filter=t-shirts">T-Shirts</a></li>
+            <li><a href="men.html?filter=hoodies">Hoodies</a></li>
+            <li><a href="men.html?filter=pants">Pants</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Journal / Info</button>
+          <ul class="nav-dropdown">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="nav-icon" id="search-btn" aria-label="Search" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+      </button>
+      <button class="nav-icon" id="bag-btn" aria-label="Shopping bag" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 01-8 0"></path>
+        </svg>
+        <span class="bag-count" id="bag-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       PAGE HEADER — Accessories
+       Simpler header than Men/Women — smaller
+       collection size gets a more compact intro.
+       ========================================== -->
+  <section class="page-header" aria-label="Accessories header">
+
+    <div class="page-header-content">
+      <p class="page-header-stamp">Ghostline · Small Goods · Layer Details</p>
+      <h1 class="page-header-title">Accessories</h1>
+      <p class="page-header-desc">
+        The details that survive.<br>
+        Caps, bags, and small goods — same material, different form.
+      </p>
+    </div>
+
+    <div class="page-header-image">
+      <img
+        src="assets/images/collections/accessories.jpg"
+        alt="GHOSTLINE Accessories — caps and bags editorial"
+      />
+    </div>
+
+  </section>
+
+
+  <!-- ==========================================
+       FEATURED PRODUCT — Editorial large format
+       Accessories gets one featured item above
+       the grid — keeps it from feeling too small.
+       ========================================== -->
+  <section class="acc-featured" aria-label="Featured accessory">
+
+    <div class="acc-featured-image">
+      <img
+        src="assets/images/products/night-wall-cap.jpg"
+        alt="NIGHT WALL CAP — featured accessory"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="acc-featured-content">
+      <p class="acc-featured-stamp">Featured · New — Lot No. 07</p>
+      <h2 class="acc-featured-name">Night Wall<br>Cap</h2>
+      <p class="acc-featured-desc">
+        6-panel structured cap. Ghost sign embroidery on the front.
+        Archival lot stamp on inner band. One size.
+      </p>
+      <p class="acc-featured-price">₹1,299</p>
+      <!-- This button triggers the same addToBag function -->
+      <button
+        class="acc-featured-btn add-to-bag-btn"
+        data-product="NIGHT WALL CAP"
+        aria-label="Add NIGHT WALL CAP to bag"
+      >Add to Bag</button>
+    </div>
+
+  </section>
+
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" role="navigation" aria-label="Product filters">
+    <div class="filter-group" role="group" aria-label="Filter by type">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Caps</button>
+      <button class="filter-btn">Bags</button>
+      <button class="filter-btn">Small Goods</button>
+    </div>
+    <div class="filter-right">
+      <span class="product-count">6 PIECES</span>
+      <label for="sort-acc" class="sr-only">Sort by</label>
+      <select class="sort-select" id="sort-acc" aria-label="Sort products">
+        <option value="featured">Featured</option>
+        <option value="new">Newest</option>
+        <option value="price-asc">Price: Low–High</option>
+        <option value="price-desc">Price: High–Low</option>
+      </select>
+    </div>
+  </div>
+
+
+  <!-- PRODUCT GRID — Accessories (3-col, smaller count) -->
+  <main class="shop-section" aria-labelledby="acc-grid-label">
+    <p class="sr-only" id="acc-grid-label">Accessories products</p>
+
+    <div class="shop-grid">
+
+      <!-- Product 1 -->
+      <article class="product-card" data-filter="caps">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/night-wall-cap.jpg" alt="NIGHT WALL CAP — Black" loading="lazy" />
+          <button class="add-to-bag-btn" data-product="NIGHT WALL CAP Black" aria-label="Add NIGHT WALL CAP Black to bag">Add to Bag</button>
+        </div>
+        <p class="product-status">New — Black</p>
+        <p class="product-name">NIGHT WALL CAP</p>
+        <p class="product-price">₹1,299</p>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" data-filter="caps">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/mens-layer-cap.jpg" alt="LAYER CAP — Olive 6-panel" loading="lazy" />
+          <button class="add-to-bag-btn" data-product="LAYER CAP" aria-label="Add LAYER CAP to bag">Add to Bag</button>
+        </div>
+        <p class="product-status">In Stock — Olive</p>
+        <p class="product-name">LAYER CAP</p>
+        <p class="product-price">₹1,199</p>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" data-filter="bags">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/acc-ghost-tote.jpg" alt="GHOST TOTE — canvas tote bag with archival print" loading="lazy" />
+          <button class="add-to-bag-btn" data-product="GHOST TOTE" aria-label="Add GHOST TOTE to bag">Add to Bag</button>
+        </div>
+        <p class="product-status">New — Natural Canvas</p>
+        <p class="product-name">GHOST TOTE</p>
+        <p class="product-price">₹899</p>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="product-card" data-filter="caps">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/acc-brick-cap.jpg" alt="BRICK CAP — washed brick red, unstructured" loading="lazy" />
+          <button class="add-to-bag-btn" data-product="BRICK CAP" aria-label="Add BRICK CAP to bag">Add to Bag</button>
+        </div>
+        <p class="product-status" style="color: var(--accent);">Low Stock — Brick</p>
+        <p class="product-name">BRICK CAP</p>
+        <p class="product-price">₹1,099</p>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="product-card" data-filter="bags">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/acc-wall-bag.jpg" alt="WALL BAG — small utility shoulder bag" loading="lazy" />
+          <button class="add-to-bag-btn" data-product="WALL BAG" aria-label="Add WALL BAG to bag">Add to Bag</button>
+        </div>
+        <p class="product-status">New — Black</p>
+        <p class="product-name">WALL BAG</p>
+        <p class="product-price">₹1,599</p>
+      </article>
+
+      <!-- Product 6 -->
+      <article class="product-card" data-filter="small goods">
+        <div class="product-image-wrap">
+          <img src="assets/images/products/acc-stamp-keychain.jpg" alt="LOT STAMP KEYCHAIN — enamel archival tag" loading="lazy" />
+          <button class="add-to-bag-btn" data-product="LOT STAMP KEYCHAIN" aria-label="Add LOT STAMP KEYCHAIN to bag">Add to Bag</button>
+        </div>
+        <p class="product-status">In Stock — Enamel</p>
+        <p class="product-name">LOT STAMP KEYCHAIN</p>
+        <p class="product-price">₹399</p>
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">GHOSTLINE</span>
+        <p class="footer-statement">
+          Prints what the city painted over.<br>
+          History doesn't vanish — it fades into the next layer.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Shop</p>
+        <ul class="footer-links">
+          <li><a href="men.html" class="footer-link">Men</a></li>
+          <li><a href="women.html" class="footer-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+          <li><a href="#" class="footer-link">Sale</a></li>
+          <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Information</p>
+        <ul class="footer-links" style="margin-bottom: 32px;">
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+        <p class="footer-col-label">Social</p>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/ghostlines/" class="footer-link">Instagram</a></li>
+          <li><a href="https://x.com/ghostlines/" class="footer-link">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">EST. LAYER 3 &nbsp;·&nbsp; PRINTED, NOT PAINTED &nbsp;·&nbsp; © GHOSTLINE</p>
+      <p class="footer-tagline">NOTHING FADES CLEAN.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

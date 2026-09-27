@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title id="page-title">Article — GHOSTLINE Journal</title>
+  <meta name="description" id="page-desc" content="An archival record from GHOSTLINE Journal: urban surfaces, ghost signs, and the culture beneath the paint." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Shop</p>
+        <ul>
+          <li><a href="men.html" class="mobile-nav-link">Men</a></li>
+          <li><a href="women.html" class="mobile-nav-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Collections</p>
+        <ul>
+          <li><a href="collection.html?category=t-shirts" class="mobile-nav-link">T-Shirts</a></li>
+          <li><a href="collection.html?category=hoodies" class="mobile-nav-link">Hoodies</a></li>
+          <li><a href="collection.html?category=pants" class="mobile-nav-link">Pants</a></li>
+          <li><a href="accessories.html" class="mobile-nav-link">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Journal / Info</p>
+        <ul>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="terms.html" class="mobile-nav-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="mobile-nav-link">Privacy Policy</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="mobile-nav-meta">
+      <a href="#">Instagram</a>
+      <a href="#">X</a>
+    </div>
+  </nav>
+
+  <!-- NAVBAR — static on editorial pages -->
+  <header id="navbar" class="navbar navbar-static scrolled" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="GHOSTLINE home">GHOSTLINE</a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Collections</button>
+          <ul class="nav-dropdown">
+            <li><a href="collection.html?category=t-shirts">T-Shirts</a></li>
+            <li><a href="collection.html?category=hoodies">Hoodies</a></li>
+            <li><a href="collection.html?category=pants">Pants</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Journal / Info</button>
+          <ul class="nav-dropdown">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="nav-icon" id="search-btn" aria-label="Search" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+      </button>
+      <button class="nav-icon" id="bag-btn" aria-label="Shopping bag" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 01-8 0"></path>
+        </svg>
+        <span class="bag-count" id="bag-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       ARTICLE DETAIL CONTAINER
+       ========================================== -->
+  <main class="article-detail" id="article-root">
+
+    <!-- Header Section -->
+    <header class="article-detail-header">
+      <a href="blog.html" class="article-back-link" aria-label="Return to blog journal">
+        ← Return to Journal
+      </a>
+      <p class="article-detail-stamp" id="article-stamp">Journal Entry · Lot No. 001</p>
+      <h1 class="article-detail-title" id="article-title">The City Paints Over Everything</h1>
+      <div class="article-detail-meta">
+        <span class="article-category" id="article-category">Urban Memory</span>
+        <span class="article-date" id="article-date">September 2026</span>
+      </div>
+    </header>
+
+    <!-- Editorial Hero Image -->
+    <div class="article-detail-hero">
+      <img
+        id="article-image"
+        src="assets/images/editorial/blog-featured.jpg"
+        alt="Ghost sign on a brick wall — faded paint, urban decay"
+      />
+    </div>
+
+    <!-- Editorial Body -->
+    <div class="article-detail-body">
+      <p class="article-lead" id="article-lead">
+        Every wall in every city is a document. Paint layers accumulate over decades — brand names, phone numbers, business hours, political slogans. When the new layer goes on, the old one doesn't vanish. It retreats. It bleeds through. It becomes a ghost.
+      </p>
+
+      <div id="article-content">
+        <!-- Injected by JS based on article ID -->
+      </div>
+
+      <blockquote class="article-quote" id="article-quote">
+        "The repaint is never absolute. Given five monsoon seasons, the original wall will always state its name."
+      </blockquote>
+    </div>
+
+    <!-- Footer / Navigation -->
+    <footer class="article-footer-nav">
+      <a href="blog.html" class="read-link">← Back to All Stories</a>
+      <span class="article-footer-archive">GHOSTLINE · Archive Documentation</span>
+    </footer>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div>
+        <p class="footer-logo">GHOSTLINE</p>
+        <p class="footer-statement">
+          Built from the layers of the city. Wear what was painted over.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Navigation</p>
+        <ul class="footer-links">
+          <li><a href="men.html" class="footer-link">Men</a></li>
+          <li><a href="women.html" class="footer-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+          <li><a href="collection.html?category=t-shirts" class="footer-link">T-Shirts</a></li>
+          <li><a href="collection.html?category=hoodies" class="footer-link">Hoodies</a></li>
+          <li><a href="collection.html?category=pants" class="footer-link">Pants</a></li>
+          <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Archive</p>
+        <ul class="footer-links">
+          <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+          <li><a href="blog.html" class="footer-link">Journal Archive</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 GHOSTLINE. All rights reserved.</p>
+      <p class="footer-tagline">Nothing fades completely.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Local article renderer fallback if main.js is loaded
+    (function initArticle() {
+      const articles = window.GHOSTLINE_ARTICLES || {};
+      const params = new URLSearchParams(window.location.search);
+      const articleId = params.get('id') || 'city-paints-over-everything';
+      const article = articles[articleId] || articles['city-paints-over-everything'];
+
+      if (!article) return;
+
+      const titleEl = document.getElementById('article-title');
+      const pageTitle = document.getElementById('page-title');
+      const pageDesc = document.getElementById('page-desc');
+      const stampEl = document.getElementById('article-stamp');
+      const catEl = document.getElementById('article-category');
+      const dateEl = document.getElementById('article-date');
+      const imgEl = document.getElementById('article-image');
+      const leadEl = document.getElementById('article-lead');
+      const quoteEl = document.getElementById('article-quote');
+      const contentEl = document.getElementById('article-content');
+
+      if (titleEl) titleEl.textContent = article.title;
+      if (pageTitle) pageTitle.textContent = article.title + ' — GHOSTLINE Journal';
+      if (pageDesc) pageDesc.setAttribute('content', article.lead);
+      if (stampEl) stampEl.textContent = article.stamp || ('Journal Entry · ' + article.category);
+      if (catEl) catEl.textContent = article.category;
+      if (dateEl) dateEl.textContent = article.date;
+      if (imgEl) {
+        imgEl.src = article.image;
+        imgEl.alt = article.imageAlt || article.title;
+      }
+      if (leadEl) leadEl.textContent = article.lead;
+      if (quoteEl) quoteEl.textContent = '“' + article.quote + '”';
+
+      if (contentEl && Array.isArray(article.paragraphs)) {
+        contentEl.innerHTML = article.paragraphs
+          .map(function(p) { return '<p class="article-text">' + p + '</p>'; })
+          .join('');
+      }
+    })();
+  </script>
+</body>
+</html>

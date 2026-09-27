@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Privacy Policy — GHOSTLINE</title>
+  <meta name="description" content="GHOSTLINE Privacy Policy. How we collect, use, and protect your information." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Shop</p>
+        <ul>
+          <li><a href="men.html" class="mobile-nav-link">Men</a></li>
+          <li><a href="women.html" class="mobile-nav-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="mobile-nav-link">New Arrivals</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Collections</p>
+        <ul>
+          <li><a href="men.html?filter=t-shirts" class="mobile-nav-link">T-Shirts</a></li>
+          <li><a href="men.html?filter=hoodies" class="mobile-nav-link">Hoodies</a></li>
+          <li><a href="men.html?filter=pants" class="mobile-nav-link">Pants</a></li>
+          <li><a href="accessories.html" class="mobile-nav-link">Accessories</a></li>
+        </ul>
+      </li>
+      <li class="mobile-nav-group">
+        <p class="mobile-nav-group-label">Journal / Info</p>
+        <ul>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="terms.html" class="mobile-nav-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="mobile-nav-link">Privacy Policy</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="mobile-nav-meta">
+      <a href="https://www.instagram.com/ghostlines/">Instagram</a>
+      <a href="https://x.com/ghostlines/">X</a>
+    </div>
+  </nav>
+
+  <header id="navbar" class="navbar navbar-static scrolled" role="banner">
+    <a href="index.html" class="nav-logo" aria-label="GHOSTLINE home">GHOSTLINE</a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Shop</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Collections</button>
+          <ul class="nav-dropdown">
+            <li><a href="men.html?filter=t-shirts">T-Shirts</a></li>
+            <li><a href="men.html?filter=hoodies">Hoodies</a></li>
+            <li><a href="men.html?filter=pants">Pants</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <button type="button" class="nav-link nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Journal / Info</button>
+          <ul class="nav-dropdown">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="nav-icon" id="search-btn" aria-label="Search" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+      </button>
+      <button class="nav-icon" id="bag-btn" aria-label="Shopping bag" aria-expanded="false">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 01-8 0"></path>
+        </svg>
+        <span class="bag-count" id="bag-count" aria-live="polite">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ==========================================
+       LEGAL HEADER
+       ========================================== -->
+  <header class="legal-header">
+    <p class="legal-eyebrow">GHOSTLINE / PRIVACY</p>
+    <h1 class="legal-title">Privacy<br>Policy</h1>
+    <p class="legal-effective">Effective Date: 01 September 2026</p>
+  </header>
+
+
+  <!-- ==========================================
+       TWO-COLUMN LEGAL BODY
+       Left: sticky TOC. Right: document content.
+       ========================================== -->
+  <div class="legal-body">
+
+    <!-- LEFT — Sticky table of contents -->
+    <aside class="legal-toc" aria-label="Document sections">
+      <p class="legal-toc-label">Sections</p>
+      <ul class="legal-toc-list">
+        <!-- href matches the id on each section below -->
+        <li><a href="#section-01" class="legal-toc-link active">01 — Info Collected</a></li>
+        <li><a href="#section-02" class="legal-toc-link">02 — How We Use</a></li>
+        <li><a href="#section-03" class="legal-toc-link">03 — Cookies</a></li>
+        <li><a href="#section-04" class="legal-toc-link">04 — Orders</a></li>
+        <li><a href="#section-05" class="legal-toc-link">05 — Communications</a></li>
+        <li><a href="#section-06" class="legal-toc-link">06 — Data Sharing</a></li>
+        <li><a href="#section-07" class="legal-toc-link">07 — Security</a></li>
+        <li><a href="#section-08" class="legal-toc-link">08 — Retention</a></li>
+        <li><a href="#section-09" class="legal-toc-link">09 — Your Rights</a></li>
+        <li><a href="#section-10" class="legal-toc-link">10 — Third-Party</a></li>
+        <li><a href="#section-11" class="legal-toc-link">11 — Policy Changes</a></li>
+        <li><a href="#section-12" class="legal-toc-link">12 — Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- RIGHT — Document content -->
+    <main class="legal-content" aria-label="Privacy Policy document">
+
+      <!-- Demo notice -->
+      <p class="legal-demo-notice">
+        DEMO / HACKATHON PROJECT — This is a fictional document created for
+        demonstration purposes only. GHOSTLINE is a concept brand. All
+        contact information, addresses and legal details below are placeholder.
+      </p>
+
+      <!-- 01 -->
+      <section class="legal-section" id="section-01">
+        <p class="legal-section-number">01</p>
+        <h2 class="legal-section-title">Information We Collect</h2>
+        <p class="legal-text">
+          When you visit GHOSTLINE, we collect certain information about your device,
+          your interaction with the site, and information necessary to process your
+          purchases. We may also collect additional information if you contact us
+          for customer support.
+        </p>
+        <p class="legal-text">
+          Personal information collected may include: name, billing address,
+          shipping address, payment information, email address, and phone number.
+        </p>
+      </section>
+
+      <!-- 02 -->
+      <section class="legal-section" id="section-02">
+        <p class="legal-section-number">02</p>
+        <h2 class="legal-section-title">How We Use Information</h2>
+        <p class="legal-text">
+          We use your personal Information to provide our services to you, which
+          includes: offering products for sale, processing payments, shipping and
+          fulfillment of your order, and keeping you up to date on new products,
+          services, and offers.
+        </p>
+      </section>
+
+      <!-- 03 -->
+      <section class="legal-section" id="section-03">
+        <p class="legal-section-number">03</p>
+        <h2 class="legal-section-title">Cookies</h2>
+        <p class="legal-text">
+          A cookie is a small amount of information that’s downloaded to your computer
+          or device when you visit our Site. We use a number of different cookies,
+          including functional, performance, advertising, and social media or content
+          cookies.
+        </p>
+        <p class="legal-text">
+          Cookies make your browsing experience better by allowing the website to
+          remember your actions and preferences (such as login and region selection).
+        </p>
+      </section>
+
+      <!-- 04 -->
+      <section class="legal-section" id="section-04">
+        <p class="legal-section-number">04</p>
+        <h2 class="legal-section-title">Order Information</h2>
+        <p class="legal-text">
+          When you place an order or attempt to place an order through the Site,
+          we collect certain information from you, including your name, billing address,
+          shipping address, payment information, email address, and phone number.
+          We refer to this information as "Order Information".
+        </p>
+      </section>
+
+      <!-- 05 -->
+      <section class="legal-section" id="section-05">
+        <p class="legal-section-number">05</p>
+        <h2 class="legal-section-title">Communications</h2>
+        <p class="legal-text">
+          We may use your Personal Information to communicate with you about your
+          order, respond to your inquiries, and, if in line with the preferences you
+          have shared with us, provide you with information or advertising relating
+          to our products or services.
+        </p>
+      </section>
+
+      <!-- 06 -->
+      <section class="legal-section" id="section-06">
+        <p class="legal-section-number">06</p>
+        <h2 class="legal-section-title">Data Sharing</h2>
+        <p class="legal-text">
+          We share your Personal Information with service providers to help us provide
+          our services and fulfill our contracts with you. For example, we use third
+          parties to process payments and handle shipping.
+        </p>
+        <p class="legal-text">
+          We may also share your Personal Information to comply with applicable laws
+          and regulations, to respond to a subpoena, search warrant or other lawful
+          request for information we receive, or to otherwise protect our rights.
+        </p>
+      </section>
+
+      <!-- 07 -->
+      <section class="legal-section" id="section-07">
+        <p class="legal-section-number">07</p>
+        <h2 class="legal-section-title">Data Security</h2>
+        <p class="legal-text">
+          We implement appropriate technical and organizational security measures to
+          protect your personal information against accidental or unlawful destruction,
+          loss, alteration, unauthorized disclosure or access.
+        </p>
+        <p class="legal-text">
+          However, please note that no method of transmission over the Internet, or
+          method of electronic storage, is 100% secure. Therefore, we cannot guarantee
+          its absolute security.
+        </p>
+      </section>
+
+      <!-- 08 -->
+      <section class="legal-section" id="section-08">
+        <p class="legal-section-number">08</p>
+        <h2 class="legal-section-title">Data Retention</h2>
+        <p class="legal-text">
+          When you place an order through the Site, we will retain your Personal
+          Information for our records unless and until you ask us to erase this
+          information.
+        </p>
+      </section>
+
+      <!-- 09 -->
+      <section class="legal-section" id="section-09">
+        <p class="legal-section-number">09</p>
+        <h2 class="legal-section-title">Your Rights</h2>
+        <p class="legal-text">
+          Depending on your location, you may have the right to access the personal
+          information we hold about you, to port it to a new service, and to ask that
+          your personal information be corrected, updated, or erased.
+        </p>
+        <p class="legal-text">
+          If you would like to exercise these rights, please contact us through the
+          contact information below.
+        </p>
+      </section>
+
+      <!-- 10 -->
+      <section class="legal-section" id="section-10">
+        <p class="legal-section-number">10</p>
+        <h2 class="legal-section-title">Third-Party Services</h2>
+        <p class="legal-text">
+          In general, the third-party providers used by us will only collect, use and
+          disclose your information to the extent necessary to allow them to perform
+          the services they provide to us.
+        </p>
+        <p class="legal-text">
+          However, certain third-party service providers, such as payment gateways
+          and other payment transaction processors, have their own privacy policies in
+          respect to the information we are required to provide to them for your
+          purchase-related transactions.
+        </p>
+      </section>
+
+      <!-- 11 -->
+      <section class="legal-section" id="section-11">
+        <p class="legal-section-number">11</p>
+        <h2 class="legal-section-title">Policy Changes</h2>
+        <p class="legal-text">
+          We may update this Privacy Policy from time to time in order to reflect,
+          for example, changes to our practices or for other operational, legal, or
+          regulatory reasons.
+        </p>
+      </section>
+
+      <!-- 12 -->
+      <section class="legal-section" id="section-12">
+        <p class="legal-section-number">12</p>
+        <h2 class="legal-section-title">Contact</h2>
+        <p class="legal-text">
+          For more information about our privacy practices, if you have questions,
+          or if you would like to make a complaint, please contact us by e-mail at:
+        </p>
+        <p class="legal-text" style="margin-top: 16px;">
+          GHOSTLINE<br>
+          [Demo Address — Layer 3, Urban Block, Mumbai, India]<br>
+          <span style="font-family: 'Courier Prime', monospace; font-size: 11px; letter-spacing: 0.1em;">privacy@ghostline.in (demo)</span>
+        </p>
+      </section>
+
+    </main>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div>
+        <span class="footer-logo">GHOSTLINE</span>
+        <p class="footer-statement">
+          Prints what the city painted over.<br>
+          History doesn't vanish — it fades into the next layer.
+        </p>
+      </div>
+      <div>
+        <p class="footer-col-label">Shop</p>
+        <ul class="footer-links">
+          <li><a href="men.html" class="footer-link">Men</a></li>
+          <li><a href="women.html" class="footer-link">Women</a></li>
+          <li><a href="new-arrivals.html" class="footer-link">New Arrivals</a></li>
+          <li><a href="#" class="footer-link">Sale</a></li>
+          <li><a href="accessories.html" class="footer-link">Accessories</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-label">Information</p>
+        <ul class="footer-links" style="margin-bottom: 32px;">
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="terms.html" class="footer-link">Terms &amp; Conditions</a></li>
+          <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+        </ul>
+        <p class="footer-col-label">Social</p>
+        <ul class="footer-links">
+          <li><a href="https://www.instagram.com/ghostlines/" class="footer-link">Instagram</a></li>
+          <li><a href="https://x.com/ghostlines/" class="footer-link">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">EST. LAYER 3 &nbsp;·&nbsp; PRINTED, NOT PAINTED &nbsp;·&nbsp; © GHOSTLINE</p>
+      <p class="footer-tagline">NOTHING FADES CLEAN.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
